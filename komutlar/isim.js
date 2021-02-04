@@ -4,7 +4,7 @@ const ayarlar = require('../ayarlar.json')
 
 exports.run = async (client, message, args) => {
 
-  if (message.author.id !== (ayarlar.sahip) && !message.member.hasPermission("ADMINISTRATOR") && !message.member.roles.has("787008757456175157") && !message.member.roles.has("786982207125717013") && !message.member.roles.has("785566803895779339") && !message.member.roles.has("788471377157554216") && !message.member.roles.has("784565555079282698") && !message.member.roles.has("784565557181415476") && !message.member.roles.has("784565559618306060") && !message.member.roles.has("784565575649067038")) return message.react("716404735883608105") && message.reply('**Gerekli Yetkiye Sahip Değilsin!**').then(msg => msg.delete(9000)) 
+  if (message.author.id !== (ayarlar.sahip) && !message.member.hasPermission("ADMINISTRATOR") && !message.member.roles.has("OwnerİD") && !message.member.roles.has("YöneticiİD") && !message.member.roles.has("RegisterİD")) return message.reply('**Gerekli Yetkiye Sahip Değilsin!**').then(msg => msg.delete(7000)) 
 
  let msg = message;
 
