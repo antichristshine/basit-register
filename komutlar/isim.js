@@ -20,22 +20,21 @@ exports.run = async (client, message, args) => {
  var argumentler = message.content.split(" ");
  var isim = argumentler[2] ;
  var yas = argumentler[3];
- if (!user) return message.react("716404735883608105") && message.reply(`Bir kullanıcı etiketlemelisin! @kişi/id`).then(msg => msg.delete(5000))  
- if (!isim) return message.react("716404735883608105") && message.reply(`Kullanıcı adı yazmalısın.`).then(msg => msg.delete(5000))  
- if (!yas) return message.react("716404735883608105") && message.reply(`Yaş belirtmediniz.`).then(msg => msg.delete(5000)) 
- if (isim.length + yas.length + 3 > 32) return message.react("716404735883608105") && message.reply(`Takma ad 32 karakteri geçmez!`).then(msg => msg.delete(5000))
- if(message.author.id === user.id && message.react("716404735883608105")) return message.reply("Kendini kayıt edemezsin!").then(msg => msg.delete(9000))   
+ if (!user) return message.reply(`Bir kullanıcı etiketlemelisin! @kişi/id`).then(msg => msg.delete(5000))  
+ if (!isim) return message.reply(`Kullanıcı adı yazmalısın.`).then(msg => msg.delete(5000))  
+ if (!yas) return message.reply(`Yaş belirtmediniz.`).then(msg => msg.delete(5000)) 
+ if (isim.length + yas.length + 3 > 32) return message.reply(`Takma ad 32 karakteri geçmez!`).then(msg => msg.delete(5000))
+ if(message.author.id === user.id) return message.reply("Kendini kayıt edemezsin!").then(msg => msg.delete(9000))   
 
-await member.setNickname(`△ ${isim} | ${yas}`)
+await member.setNickname(`${isim} | ${yas}`)
 
 const fayikcim = new Discord.RichEmbed()
     .setColor("090e29")
     .setDescription(`${member} Adlı kullanıcı İsmi \`${member.nickname || '404'}\` Olarak Ayarlandı!`)
-    .setFooter(`Demon ❤️ Fayikcim`, message.author.avatarURL)
+    .setFooter(`DevWork ❤️ Fayikcim`, message.author.avatarURL)
     .setTimestamp()
-     message.channel.send(fayikcim).then(m => m.delete(7500))//5saniyede mesajı siler
-    message.react('716406454638346300').catch()
-  
+     message.channel.send(fayikcim).then(m => m.delete(7500))
+
 }
            
 exports.conf = {
