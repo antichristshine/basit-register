@@ -12,7 +12,7 @@ const ayarlar = require('./ayarlar.json')
 client.on('ready', ()=>{
   client.user.setStatus("dnd")
   client.user.setActivity('DevWork ❤️ Fayikcim')
-    let fayikcim = client.channels.get(ayarlar.seskanal);
+    let fayikcim = client.channels.get('ses id');
     if (!fayikcim) return console.log(`Ses Kanalı Bulunamadı.`);
     fayikcim.join().then(console.log(`Ses Kanalına Bağlanıldı.`)).catch(err => console.error(`Ses Kanalına Bağlanılamadı.`));
     setInterval(() => {
