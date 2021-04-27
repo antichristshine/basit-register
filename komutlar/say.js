@@ -6,7 +6,7 @@ module.exports.run = async (client, message, args) => {
   if (message.author.id !== (ayarlar.sahip) && !message.member.hasPermission("ADMINISTRATOR") && !message.member.roles.has("OwnerİD") && !message.member.roles.has("YöneticiİD") && !message.member.roles.has("RegisterİD")) return message.reply('**Gerekli Yetkiye Sahip Değilsin!**').then(msg => msg.delete(7000)) 
 
   const voiceChannels = message.guild.channels.filter(c => c.type === 'voice');
-    var toplamEtiketliUyeler = message.guild.members.filter(member => member.user.username.includes("TAG")).size
+    var toplamEtiketliUyeler = message.guild.members.filter(member => member.user.username.includes("#2016")).size
     let çevrimiçi = message.guild.members.filter(m => m.presence.status !== "offline").size
     let count = 0;
     for (const [id, voiceChannel] of voiceChannels) count += voiceChannel.members.size;
